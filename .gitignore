@@ -1,0 +1,4 @@
+*.dev.js
+*.py
+.DS_Store
+Thumbs.db

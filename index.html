@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dế Mèn Phiêu Lưu Ký – Giới Thiệu Sách</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script src="security.js?v=1"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Full-screen BG -->
+    <div id="bgImg"></div>
+    <div id="bgDim"></div>
+    <canvas id="fxCanvas"></canvas>
+    <div class="ambient-glow orb-gold"></div>
+    <div class="ambient-glow orb-blue"></div>
+
+    <!-- Topbar -->
+    <header id="topbar">
+      <div class="tb-left">
+        <span class="logo">Dế Mèn Phiêu Lưu Ký</span>
+        <span class="sep"></span>
+        <span class="event">Tuần Lễ Học Tập Suốt Đời</span>
+      </div>
+      <div class="tb-right">
+        <button id="btnFS" title="Fullscreen (F)">⛶</button>
+      </div>
+    </header>
+
+    <!-- Main stage -->
+    <main id="main">
+      <!-- Card: media -->
+      <div id="cardMedia">
+        <div class="card-glare" id="glareMedia"></div>
+        <img id="cardImg" src="" alt="">
+        <video id="cardVid" style="display:none" playsinline controls></video>
+      </div>
+      <!-- Card: text -->
+      <div id="cardText">
+        <div class="card-glare" id="glareText"></div>
+        <span id="partLabel"></span>
+        <span id="partDesc"></span>
+        <h2 id="slideTitle"></h2>
+        <div id="bulletList"></div>
+      </div>
+    </main>
+
+    <!-- ═══ SUBTITLE BAR ═══ -->
+    <div id="subBar">
+      <div class="sub-head">
+        <span class="sub-dot"></span>
+        <span>PHỤ ĐỀ TIẾNG VIỆT</span>
+        <div id="soundWave" class="sound-wave" title="Âm thanh phát sóng">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <span id="voiceName" class="sub-voice">Sẵn sàng</span>
+      </div>
+      <div id="subBox"></div>
+    </div>
+
+    <!-- ═══ CONTROLS ═══ -->
+    <footer id="controls">
+      <div id="scrub"><div id="scrubFill"></div></div>
+      <div class="ctrl-row">
+        <div class="ctrl-left">
+          <button id="btnPrev" class="cb" title="◀ Slide trước">◀</button>
+          <button id="btnPlay" class="cb play-btn off" title="Phát / Dừng (Space)">▶ PHÁT</button>
+          <button id="btnNext" class="cb" title="Slide tiếp ▶">▶</button>
+          <button id="btnReplay" class="cb" title="Đọc lại ↻">↻</button>
+        </div>
+        <div class="ctrl-mid">
+          <div id="dots"></div>
+          <span class="counter">Slide <span id="cNum">1</span> / <span id="tNum">7</span></span>
+        </div>
+        <div class="ctrl-right">
+          <label class="slider-group">
+            <span>Tốc độ</span>
+            <input type="range" id="speedRange" min="60" max="150" value="100" step="5">
+            <span id="speedVal">1.0×</span>
+          </label>
+          <label class="slider-group">
+            <span>Âm lượng</span>
+            <input type="range" id="volRange" min="0" max="100" value="100" step="5">
+          </label>
+          <select id="selMode" class="sel" title="Kiểu phụ đề">
+            <option value="sentence" selected>Từng câu Karaoke</option>
+            <option value="all">Toàn bộ Karaoke</option>
+            <option value="scroll">Cuộn từng dòng</option>
+          </select>
+          <div class="font-grp">
+            <button id="fontDown">A−</button>
+            <span id="fontPct">100%</span>
+            <button id="fontUp">A+</button>
+          </div>
+          <button id="btnAudio" class="cb" title="Bật/Tắt giọng tiếng Anh">🔊 English Voice</button>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/timing_data.js?v=4"></script>
+  <script src="app.js?v=5"></script>
+</body>
+</html>
