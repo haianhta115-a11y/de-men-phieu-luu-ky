@@ -212,6 +212,27 @@ img,video,canvas{pointer-events:auto;-webkit-user-drag:none!important;user-selec
 .font-grp button:hover{background:var(--gold-glow)}
 .font-grp span{font-size:10px;color:var(--dim);min-width:28px;text-align:center}
 
+/* ── BGM Button with Real Vinyl Disc Image ── */
+.bgm-btn{
+  display:inline-flex!important;align-items:center!important;gap:8px!important;
+  background:linear-gradient(135deg,rgba(22,28,44,.92) 0%,rgba(10,14,24,.96) 100%)!important;
+  border:1px solid rgba(240,179,50,.35)!important;padding:4px 13px 4px 6px!important;
+  border-radius:20px!important;cursor:pointer!important;transition:all .25s cubic-bezier(.16,1,.3,1)!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1)!important}
+.bgm-btn:hover{
+  background:linear-gradient(135deg,rgba(240,179,50,.2) 0%,rgba(22,28,44,.95) 100%)!important;
+  border-color:var(--gold)!important;box-shadow:0 0 16px var(--gold-glow),0 6px 18px rgba(0,0,0,.6)!important;
+  transform:translateY(-1px) scale(1.03)}
+.bgm-btn.active{border-color:var(--gold)!important;box-shadow:0 0 14px rgba(240,179,50,.35)!important}
+.bgm-disc-icon{
+  width:24px!important;height:24px!important;border-radius:50%!important;
+  object-fit:cover!important;box-shadow:0 0 8px rgba(240,179,50,.5)!important;
+  transition:transform .3s ease,filter .3s ease!important;pointer-events:none!important;display:block!important}
+.bgm-disc-icon.spinning{animation:spinDisc 4.5s linear infinite!important}
+@keyframes spinDisc{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+#bgmText{font-size:11.5px!important;font-weight:700!important;color:#f1ede6!important;letter-spacing:.3px!important}
+.bgm-btn.active #bgmText{color:#ffd97a!important;text-shadow:0 0 10px rgba(240,179,50,.6)!important}
+
 /* ── Responsive ── */
 @media(max-width:960px){
   #main{grid-template-columns:1fr;gap:12px}
